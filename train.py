@@ -88,9 +88,9 @@ def compile_model(network, nb_classes, input_shape):
         model.add(Dropout(0.2))  # hard-coded dropout
 
     # Output layer.
-    model.add(Dense(nb_classes, activation='softmax'))
+    model.add(Dense(nb_classes, activation='linear'))
 
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer,
+    model.compile(loss='mean_squared_error', optimizer=optimizer,
                   metrics=['accuracy'])
 
     return model
