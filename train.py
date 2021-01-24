@@ -88,7 +88,7 @@ def compile_model(network, nb_classes, input_shape):
         model.add(Dropout(0.2))  # hard-coded dropout
 
     # Output layer.
-    model.add(Dense(nb_classes, activation='linear'))
+    model.add(Dense(4, activation='linear'))
 
     model.compile(loss='mean_squared_error', optimizer=optimizer,
                   metrics=['accuracy'])
